@@ -1,3 +1,6 @@
 def draw_library():
-    print("library not found")
+    println("This is a library")
+    println("book book book book")
+    println("book book book book")
+    println("table table table")
     return
