@@ -8,4 +8,7 @@ def read_csv(csv_file_path):
     lines=lines.split('\n')
     for row in range(len(lines)):
         lines[row]=(lines[row]).split(',')
+        for column in range(len(lines[row])):
+            if isdigit(lines[row][column]):
+                lines[row][column]=(int) (lines[row][column])
     return lines
