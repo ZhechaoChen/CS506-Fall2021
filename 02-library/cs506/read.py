@@ -11,4 +11,8 @@ def read_csv(csv_file_path):
         for column in range(len(lines[row])):
             if lines[row][column].isdigit():
                 lines[row][column]=(int) (lines[row][column])
+            else:
+                lines[row][column]=lines[row][column][1,-2]
+    lines.remove([])
+        
     return lines
