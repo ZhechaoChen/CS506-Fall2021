@@ -23,8 +23,8 @@ def jaccard_dist(x, y):
     size_y=len(y)
     intersect=set_x&set_y
     size_intersect=len(intersect)
-    
-    res=1-size_intersect/(size_x+size_y-size_intersect)
+    combine=set_x | intersect
+    res=1-size_intersect/(len(combine)
     return res
 
 def cosine_sim(x, y):
