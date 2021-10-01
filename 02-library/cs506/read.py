@@ -13,6 +13,7 @@ def read_csv(csv_file_path):
                 lines[row][column]=(int) (lines[row][column])
             else:
                 lines[row][column]=lines[row][column][1:-2]
-    lines.remove([])
+    if len(lines[-1])==0
+        del lines[-1]
         
     return lines
