@@ -26,18 +26,18 @@ def jaccard_dist(x, y):
     combine_x=set_x | intersect
     combine_y=set_y | intersect
     size_combine=max(len(combine_x),len(combine_y))
-    res=1-size_intersect/(len(combine))
+    res=1-size_intersect/size_combine
     return res
 
 def cosine_sim(x, y):
-    if len(x)==0:
-        return x
     sumxx, sumxy, sumyy = 0, 0, 0
     for i in range(len(x)):
         a = x[i]; b = y[i]
         sumxx += a*b
         sumyy += a*b
         sumxy += a*b
+    if sumxx == 0 or sumyy==0:
+        return 0
     return sumxy/math.sqrt(sumxx*sumyy)
 
 # Feel free to add more
