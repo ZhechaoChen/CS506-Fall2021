@@ -12,9 +12,14 @@ def manhattan_dist(x, y):
     return res
 
 def jaccard_dist(x, y):
+    set_x=set()
+    set_y=set()
+    for index in range(len(x)):
+        set_x.add(x[index])
+        set_y.add(y[index])
     size_x=len(x)
     size_y=len(y)
-    intersect=x&y
+    intersect=set_x&set_y
     size_intersect=len(intersect)
     res=1-size_intersect/(size_x+size_y-size_intersect)
     return res
@@ -26,6 +31,6 @@ def cosine_sim(x, y):
         sumxx += a*b
         sumyy += a*b
         sumxy += a*b
-    return sumxy/math.sqrt(sumxx*sumyy)
+    return sumxy/(math.sqrt(sumxx*sumyy)+10**(-10))
 
 # Feel free to add more
