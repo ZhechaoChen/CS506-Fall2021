@@ -23,11 +23,15 @@ def jaccard_dist(x, y):
     size_y=len(y)
     intersect=set_x&set_y
     size_intersect=len(intersect)
-    combine=set_x | intersect
+    combine_x=set_x | intersect
+    combine_y=set_y | intersect
+    size_combine=max(len(combine_x),len(combine_y))
     res=1-size_intersect/(len(combine))
     return res
 
 def cosine_sim(x, y):
+    if len(x)==0:
+        return x
     sumxx, sumxy, sumyy = 0, 0, 0
     for i in range(len(x)):
         a = x[i]; b = y[i]
