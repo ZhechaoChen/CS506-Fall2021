@@ -12,7 +12,7 @@ def read_csv(csv_file_path):
             if lines[row][column].isdigit():
                 lines[row][column]=(int) (lines[row][column])
             else:
-                lines[row][column]=lines[row][column][1,-2]
+                lines[row][column]=lines[row][column][1:-2]
     lines.remove([])
         
     return lines
