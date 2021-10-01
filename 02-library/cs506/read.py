@@ -10,6 +10,7 @@ def read_csv(csv_file_path):
         lines[row]=(lines[row]).split(',')
         if lines[row]==[""]:
             del lines[row]
+            continue
         for column in range(len(lines[row])):
             if lines[row][column].isdigit():
                 lines[row][column]=(int) (lines[row][column])
