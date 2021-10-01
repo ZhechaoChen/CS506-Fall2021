@@ -22,7 +22,7 @@ def jaccard_dist(x, y):
     size_x=len(x)
     size_y=len(y)
     intersect=set_x&set_y
-    size_intersect=len(intersect)*2
+    size_intersect=len(intersect)
     
     res=1-size_intersect/(size_x+size_y-size_intersect)
     return res
