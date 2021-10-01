@@ -2,7 +2,7 @@ from collections import defaultdict
 from math import inf
 import random
 import csv
-
+from cs506 import sim
 
 def point_avg(points):
     """
@@ -11,7 +11,17 @@ def point_avg(points):
     
     Returns a new point which is the center of all the points.
     """
-    raise NotImplementedError()
+    sum=[]
+    for num in range(len(points[0])):
+        sum.append(0)
+    for row in range(len(points)):
+        for column in range(len(points[row])):
+            sum[column]+=points[row][column]
+    size=len(points)
+    for index in range(len(sum)):
+        sum[index]/=size
+    return sum
+    
 
 
 def update_centers(dataset, assignments):
@@ -43,10 +53,10 @@ def distance(a, b):
     """
     Returns the Euclidean distance between a and b
     """
-    raise NotImplementedError()
+    return euclidean_dist(a, b)
 
 def distance_squared(a, b):
-    raise NotImplementedError()
+    return distance(a, b)**2
 
 def generate_k(dataset, k):
     """

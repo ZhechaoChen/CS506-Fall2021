@@ -20,11 +20,11 @@ def jaccard_dist(x, y):
 
 def cosine_sim(x, y):
     sumxx, sumxy, sumyy = 0, 0, 0
-    for i in range(len(v1)):
-        x = v1[i]; y = v2[i]
-        sumxx += x*x
-        sumyy += y*y
-        sumxy += x*y
+    for i in range(len(x)):
+        a = x[i]; b = y[i]
+        sumxx += a*b
+        sumyy += a*b
+        sumxy += a*b
     return sumxy/math.sqrt(sumxx*sumyy)
 
 # Feel free to add more
