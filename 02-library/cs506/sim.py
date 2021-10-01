@@ -1,3 +1,4 @@
+import math
 def euclidean_dist(x, y):
     res = 0
     for i in range(len(x)):
